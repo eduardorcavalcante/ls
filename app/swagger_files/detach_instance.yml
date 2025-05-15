@@ -1,0 +1,51 @@
+swagger: "2.0"
+info:
+  description: "SRE Test Loadsmart"
+  version: "1.0.0"
+  title: "Site Reliability Engineer Test"
+contact:
+  email: "jobs@loadsmart.com"
+paths:
+  "/elb/default-alb":
+    delete:
+      description: "Detach an instance from the  load balancer"
+      parameters:
+        - in: "body"
+          name: "machineId"
+          description: "instance identifier"
+          schema:
+            $ref: "#/definitions/MachineId"
+      responses:
+        "201":
+          description: "instance removed"
+          schema:
+            $ref: "#/definitions/MachineInfo"
+        "400":
+          description: "wrong data format"
+        "409":
+          description: "instance is not on load balancer"
+definitions:
+  MachineInfo:
+    type: "object"
+    required:
+      - "instanceId"
+      - "instanceType"
+      - "launchDate"
+    properties:
+      instanceId:
+        type: "string"
+        example: "i-5203422c"
+      instanceType:
+        type: "string"
+        example: "t1.micro"
+      launchDate:
+        type: "string"
+        example: "2016-08-29T09:12:33.001Z"
+  MachineId:
+    type: "object"
+    required:
+      - "instanceId"
+    properties:
+      instanceId:
+        type: "string"
+        example: "i-5203422c"

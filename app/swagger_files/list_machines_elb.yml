@@ -1,0 +1,40 @@
+swagger: "2.0"
+info:
+  description: "SRE Test Loadsmart"
+  version: "1.0.0"
+  title: "Site Reliability Engineer Test"
+contact:
+  email: "jobs@loadsmart.com"
+paths:
+  "/elb/default-alb":
+    get:
+      operationId: "listMachinesElb"
+      description: "List machines attached to a particular load balancer"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "machines listed"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/MachineInfo"
+        "404":
+          description: "the elb does not exist"
+definitions:
+  MachineInfo:
+    type: "object"
+    required:
+      - "instanceId"
+      - "instanceType"
+      - "launchDate"
+    properties:
+      instanceId:
+        type: "string"
+        example: "i-5203422c"
+      instanceType:
+        type: "string"
+        example: "t1.micro"
+      launchDate:
+        type: "string"
+        example: "2016-08-29T09:12:33.001Z"
