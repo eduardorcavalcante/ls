@@ -6,7 +6,7 @@ info:
 contact:
   email: "jobs@loadsmart.com"
 paths:
-  "/elb/default-alb":
+  "/elb/alb-ls":
     delete:
       description: "Detach an instance from the  load balancer"
       parameters:

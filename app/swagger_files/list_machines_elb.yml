@@ -6,7 +6,7 @@ info:
 contact:
   email: "jobs@loadsmart.com"
 paths:
-  "/elb/default-alb":
+  "/elb/alb-ls":
     get:
       operationId: "listMachinesElb"
       description: "List machines attached to a particular load balancer"

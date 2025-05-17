@@ -6,7 +6,7 @@ info:
 contact:
   email: "jobs@loadsmart.com"
 paths:
-  "/elb/default-alb":
+  "/elb/alb-ls":
     post:
       operationId: "attachInstance"
       description: "Attach an instance on the load balancer"

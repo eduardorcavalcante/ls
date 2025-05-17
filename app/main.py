@@ -103,7 +103,7 @@ def get_target_group_arn(elb_name):
 
 
 
-@app.route('/elb/default-alb', methods=['GET']) # Hardcoded elb_name
+@app.route('/elb/alb-ls', methods=['GET']) # Hardcoded elb_name
 @swag_from('swagger_files/list_machines_elb.yml')
 def list_machines_elb():
     """
@@ -128,7 +128,7 @@ def list_machines_elb():
 
 
 
-@app.route('/elb/default-alb', methods=['POST']) # Hardcoded elb_name
+@app.route('/elb/alb-ls', methods=['POST']) # Hardcoded elb_name
 @swag_from('swagger_files/attach_instance.yml')
 def attach_instance():
     """
@@ -165,7 +165,7 @@ def attach_instance():
 
 
 
-@app.route('/elb/default-alb', methods=['DELETE']) # Hardcoded elb_name
+@app.route('/elb/alb-ls', methods=['DELETE']) # Hardcoded elb_name
 @swag_from('swagger_files/detach_instance.yml')
 def detach_instance():
     """
